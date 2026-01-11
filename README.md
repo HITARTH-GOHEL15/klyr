@@ -1,271 +1,366 @@
 # 🚀 KLYR — AI Resume Intelligence Platform
 
-KLYR is a **full-stack AI-powered resume intelligence platform** built with:
+![License](https://img.shields.io/badge/license-MIT-blue.svg)
+![Python](https://img.shields.io/badge/python-3.10+-blue.svg)
+![Kotlin](https://img.shields.io/badge/kotlin-1.9+-purple.svg)
+![FastAPI](https://img.shields.io/badge/FastAPI-0.100+-green.svg)
 
-- 🧠 **FastAPI + Google Gemini AI (Backend)**
-- 📱 **Android (Jetpack Compose + Ktor + Koin)**
+KLYR is a full-stack AI-powered resume intelligence platform that helps job seekers optimize their resumes, identify skill gaps, and match their profiles with job descriptions using advanced AI technology.
 
-It helps users analyze, optimize, and tailor resumes to specific job roles using real ATS-style AI analysis.
+## 🌟 Overview
+
+**KLYR** combines the power of Google's Gemini AI with modern mobile and backend technologies to provide:
+
+- 🧠 **Gemini-AI powered FastAPI backend**
+- 📱 **Modern Android app** (Jetpack Compose + Ktor + Koin)
+
+### What KLYR Does
+
+- ✅ Analyze resumes like an Applicant Tracking System (ATS)
+- 🎯 Detect skill gaps for target roles
+- 🔍 Match resumes with job descriptions
+- ✍️ Rewrite resume bullets with ATS optimization
+- 📝 Generate professional resume sections
 
 ---
 
 ## 📁 Repository Structure
 
+```
 klyr/
 │
-├── backend/ # FastAPI + Gemini AI backend
-│ ├── main.py
-│ ├── list_models.py
-│ ├── requirements.txt
-│ └── .env (ignored)
+├── backend/               # FastAPI + Gemini AI backend
+│   ├── main.py
+│   ├── list_models.py
+│   ├── requirements.txt
+│   └── .env              # Environment variables (gitignored)
 │
-├── android/ # Android app (Jetpack Compose)
-│ └── klyr/
-│ ├── app/
-│ ├── build.gradle.kts
-│ └── settings.gradle.kts
+├── android/              # Android app (Jetpack Compose)
+│   └── klyr/
+│       ├── app/
+│       ├── build.gradle.kts
+│       └── settings.gradle.kts
 │
 └── README.md
-
-markdown
-Copy code
+```
 
 ---
 
-## ✨ Features (Tier-1 Complete)
+## 🧠 Features (Tier-1 Complete)
 
-### 🧠 Resume ATS Analysis
-- ATS score (0–100)
-- Strengths & weaknesses
-- Technical & soft skills extraction
-- Missing resume sections
-- Actionable improvement suggestions
+### ✅ Resume Analysis (ATS Grade)
+- **ATS score** (0–100 rating)
+- **Strengths & weaknesses** identification
+- **Missing sections** detection
+- **Skill extraction** from resume content
+- **Improvement suggestions** for better ATS performance
 
-### 📊 Skill Gap Analysis
-- Match percentage
-- Matched vs missing skills
-- Role readiness status
-- Learning recommendations
-- Estimated time to become job-ready
+### ✅ Skill Gap Analysis
+- **Match percentage** with target role
+- **Matched vs missing skills** breakdown
+- **Role readiness** assessment
+- **Learning roadmap** generation
+- **Estimated time** to become job-ready
 
-### 📄 Resume ↔ Job Description Match
-- JD match percentage
-- Matched keywords
-- Missing ATS keywords
-- ATS risk flags
-- Resume optimization tips
+### ✅ Job Description Match
+- **Resume ↔ JD match score**
+- **Missing ATS keywords** identification
+- **ATS risk factors** analysis
+- **Resume optimization tips**
 
-### ✍️ Resume Bullet Rewriter
-- ATS-optimized bullet rewriting
-- Role & experience aware
-- Explains why the rewrite is better
+### ✅ Resume Bullet Rewriter
+- **ATS-optimized** bullet point rewriting
+- **Role & experience aware** suggestions
+- **Explanation** of why rewritten bullets are better
 
-### 🧩 Resume Section Generator
-- Generates:
-  - Summary
-  - Experience
-  - Skills
-  - Projects
-  - Education
-  - Certifications
-- Tailored to role, experience & skills
+### ✅ Resume Section Generator
+Generate professional content for:
+- Summary
+- Experience
+- Skills
+- Projects
+- Education
+
+All tailored to your target role, experience level, and skills.
 
 ---
 
 ## 🧰 Tech Stack
 
-### Backend
-- Python 3.10+
-- FastAPI
-- Google Gemini AI
-- PyPDF2
-- Uvicorn
-- python-dotenv
+### 🔹 Backend
+- **Python 3.10+**
+- **FastAPI** - Modern web framework
+- **Google Gemini AI** - AI-powered analysis
+- **PyPDF2** - PDF processing
+- **Uvicorn** - ASGI server
+- **python-dotenv** - Environment management
 
-### Android
-- Kotlin
-- Jetpack Compose
-- Ktor Client
-- Koin (Dependency Injection)
-- Kotlinx Serialization
-- MVVM Architecture
+### 🔹 Android
+- **Kotlin** - Programming language
+- **Jetpack Compose** - Modern UI toolkit
+- **Ktor Client** - HTTP networking
+- **Koin** - Dependency injection
+- **Kotlinx Serialization** - JSON parsing
+- **MVVM Architecture** - Clean code structure
 
-### DevOps / Tools
-- Git & GitHub
-- Ngrok (local backend tunneling)
+### 🔹 Infrastructure / DevOps
+- **Ngrok** - Local tunneling for development
+- **Git + GitHub** - Version control
 
 ---
 
-# ⚙️ Backend Setup (Step-by-Step)
+## ⚙️ Backend Setup (Step-by-Step)
 
-## 1️⃣ Clone Repository
+### 1️⃣ Clone Repository
 
 ```bash
 git clone https://github.com/HITARTH-GOHEL15/klyr.git
 cd klyr/backend
-2️⃣ Create Virtual Environment
-Windows
-bash
-Copy code
+```
+
+### 2️⃣ Create Virtual Environment
+
+**Windows:**
+```bash
 python -m venv venv
 venv\Scripts\activate
-macOS / Linux
-bash
-Copy code
+```
+
+**macOS / Linux:**
+```bash
 python3 -m venv venv
 source venv/bin/activate
-3️⃣ Install Dependencies
-bash
-Copy code
+```
+
+### 3️⃣ Install Dependencies
+
+```bash
 pip install -r requirements.txt
-4️⃣ Create .env File
-Create backend/.env:
+```
 
-env
-Copy code
+### 4️⃣ Create `.env` File
+
+Create `backend/.env` with your API key:
+
+```env
 GOOGLE_API_KEY=your_gemini_api_key_here
-⚠️ Never commit .env to GitHub.
+```
 
-5️⃣ Run Backend Server
-bash
-Copy code
+> ⚠️ **Important:** Never commit `.env` to GitHub. It's already in `.gitignore`.
+
+### 5️⃣ Run Backend Server
+
+```bash
 uvicorn main:app --reload
-Backend will be live at:
+```
 
-cpp
-Copy code
-http://127.0.0.1:8000
-Swagger API Docs:
+Server will run at:
+- **API:** http://127.0.0.1:8000
+- **Swagger Docs:** http://127.0.0.1:8000/docs
 
-arduino
-Copy code
-http://127.0.0.1:8000/docs
-🌍 Expose Backend with Ngrok
-bash
-Copy code
+---
+
+## 🌍 Exposing Backend with Ngrok
+
+For Android app development, expose your local backend:
+
+```bash
 ngrok http 8000
-Copy the HTTPS URL and use it in the Android app.
+```
 
-📡 API Endpoints
-Endpoint	Method	Description
-/analyze-resume	POST	Analyze resume text
-/analyze-resume-pdf	POST	Analyze resume PDF
-/skill-gap	POST	Skill gap analysis
-/jd-match	POST	Resume vs JD match
-/rewrite-bullet	POST	Rewrite resume bullet
-/generate-section	POST	Generate resume section
+Copy the HTTPS URL (e.g., `https://xxxx.ngrok-free.dev`) and update in your Android app:
 
-Example: Rewrite Bullet API
-json
-Copy code
+```kotlin
+const val BASE_URL = "https://xxxx.ngrok-free.dev"
+```
+
+---
+
+## 📡 Backend API Endpoints
+
+| Endpoint | Method | Description |
+|----------|--------|-------------|
+| `/analyze-resume` | POST | Analyze resume text |
+| `/analyze-resume-pdf` | POST | Analyze resume PDF file |
+| `/skill-gap` | POST | Perform skill gap analysis |
+| `/jd-match` | POST | Match resume with job description |
+| `/rewrite-bullet` | POST | Rewrite a resume bullet point |
+| `/generate-section` | POST | Generate resume section content |
+
+### 🔹 Example: Bullet Rewrite Request
+
+```http
 POST /rewrite-bullet
+Content-Type: application/json
+
 {
   "bullet_point": "Worked on backend APIs",
   "target_role": "Senior Backend Engineer",
   "experience_level": "Senior"
 }
-📱 Android App Setup
-1️⃣ Open Project
-Open this folder in Android Studio:
+```
 
-bash
-Copy code
+---
+
+## 📱 Android App Setup
+
+### 1️⃣ Open Project
+
+Open the following folder in Android Studio:
+
+```
 android/klyr
-2️⃣ Firebase Config (Local Only)
-Add your Firebase config file:
+```
 
-bash
-Copy code
+### 2️⃣ Add Firebase Config (Local Only)
+
+Place your `google-services.json` file here:
+
+```
 android/klyr/app/google-services.json
-⚠️ This file is intentionally ignored from GitHub.
+```
 
-3️⃣ Update Backend URL
-In API config:
+> ⚠️ **Note:** This file is gitignored for security. You need to add your own.
 
-kotlin
-Copy code
+### 3️⃣ Update Backend URL
+
+In your network configuration file, update:
+
+```kotlin
 const val BASE_URL = "https://your-ngrok-url.ngrok-free.dev"
-4️⃣ Run the App
-Select emulator or physical device
+```
 
-Click ▶️ Run
+### 4️⃣ Run App
 
-🧩 Android Architecture
-MVVM
+1. Select your device or emulator
+2. Click **▶️ Run**
 
-Repository pattern
+---
 
-Koin for dependency injection
+## 🧩 Architecture (Android)
 
-StateFlow for UI state
+The Android app follows clean architecture principles:
 
-Clean separation:
+- **MVVM** (Model-View-ViewModel) pattern
+- **Repository pattern** for data management
+- **Koin** for dependency injection
+- **StateFlow** for reactive UI state
+- **Clean separation** of concerns:
+  - UI Layer (Composables)
+  - ViewModel Layer (Business logic)
+  - Data Layer (Repository)
+  - Network Layer (API client)
 
-UI
+---
 
-ViewModel
+## 🤝 Contributing Guide
 
-Data
+We welcome contributions! Here's how you can help:
 
-Network
+### Steps to Contribute
 
-🤝 Contributing
-We welcome contributions!
+1. **Fork the repository**
+2. **Create a feature branch**
+   ```bash
+   git checkout -b feature/my-feature
+   ```
+3. **Commit your changes**
+   ```bash
+   git commit -m "Add amazing feature"
+   ```
+4. **Push to your fork**
+   ```bash
+   git push origin feature/my-feature
+   ```
+5. **Open a Pull Request**
 
-Steps
-Fork the repository
+### Guidelines
 
-Create a feature branch
+- ✅ Keep code clean and readable
+- ✅ Follow existing architecture patterns
+- ✅ Do **not** commit secrets or API keys
+- ✅ Test your changes before submitting PR
+- ✅ Write meaningful commit messages
+- ✅ Update documentation if needed
 
-bash
-Copy code
-git checkout -b feature/my-feature
-Commit changes
+---
 
-Push to your fork
+## 🔐 Security Notes
 
-Open a Pull Request
+- `.env` file is gitignored - never commit API keys
+- `google-services.json` is gitignored - handle with care
+- **Rotate keys immediately** if accidentally committed
+- Never expose API keys in Android source code
+- Use environment variables for sensitive data
 
-Guidelines
-Follow existing architecture
+---
 
-Write clean, readable code
+## 🧪 Testing
 
-Do not commit secrets
+### Backend Testing
+- Use **Swagger UI** at `/docs` endpoint
+- Test endpoints with sample data
+- Check logs for debugging
 
-Test before submitting PRs
+### Android Testing
+- Test on **emulator** or **real device**
+- Monitor network calls via **Logcat**
+- Use **Ktor logging** for request/response inspection
 
-🔐 Security Notes
-.env is ignored
+---
 
-google-services.json is ignored
+## 📌 Roadmap (Next Features)
 
-Never expose API keys in Android code
+- [ ] **User resume storage** with cloud sync
+- [ ] **AI interview preparation** module
+- [ ] **Career roadmap generator**
+- [ ] **Multi-language support**
+- [ ] **Web dashboard** for desktop users
+- [ ] **Resume templates** library
+- [ ] **LinkedIn integration**
+- [ ] **Job application tracker**
 
-Rotate keys if leaked accidentally
+---
 
-🛣️ Roadmap
-Resume version history
+## 👨‍💻 Author
 
-AI interview preparation
+**Hitarth Gohel**
 
-Career roadmap generator
+- GitHub: [@HITARTH-GOHEL15](https://github.com/HITARTH-GOHEL15)
 
-Web dashboard
+---
 
-Multi-language support
+## ⭐ Support This Project
 
-👨‍💻 Author
-Hitarth Gohel
-GitHub: https://github.com/HITARTH-GOHEL15
+If you find KLYR helpful:
 
-⭐ Support
-If you like this project:
+- ⭐ **Star the repository**
+- 🍴 **Fork it** for your own projects
+- 🧠 **Learn from it** and build something amazing
+- 🤝 **Contribute** to make it better
+- 📢 **Share it** with others who might benefit
 
-⭐ Star the repo
+---
 
-🍴 Fork it
+## 📄 License
 
-🧠 Learn from it
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-🤝 Contribute
+---
+
+## 🙏 Acknowledgments
+
+- **Google Gemini AI** for powerful AI capabilities
+- **FastAPI** community for excellent documentation
+- **Jetpack Compose** team for modern Android UI
+- All contributors and supporters
+
+---
+
+<div align="center">
+
+**Built with ❤️ by developers, for developers**
+
+[Report Bug](https://github.com/HITARTH-GOHEL15/klyr/issues) · [Request Feature](https://github.com/HITARTH-GOHEL15/klyr/issues)
+
+</div>
