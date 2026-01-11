@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "784809826604",
+    "project_id": "klyr-4b009",
+    "storage_bucket": "klyr-4b009.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:784809826604:android:20dfb54da13bc478c43489",
+        "android_client_info": {
+          "package_name": "com.example.hito_3"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDTNZO-NczYbxQjYSAhGHbDvxZLClW4tfU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
